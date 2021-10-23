@@ -27,6 +27,7 @@ data "aws_ami" "latest-ubuntu" {
 resource "aws_instance" "web" {
   ami           = data.aws_ami.latest-ubuntu.id
   instance_type = "t3.nano"
+  key_name = ["acer-wsl","thinkpad"]
 }
 
 output "public_ip" {
