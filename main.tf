@@ -29,6 +29,9 @@ resource "aws_instance" "web" {
   instance_type = "t3.nano"
   key_name = "thinkpad"
   user_data = "${file("userdata.sh")}"
+  tags = {
+    Name = "dev" 
+  }
 }
 
 output "public_ip" {
